@@ -1,0 +1,58 @@
+.RecordingsPage {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  padding-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.RecordingsPage__header {
+  padding: 60rpx 40rpx 20rpx 40rpx;
+  margin: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.RecordingsPage__title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #fff;
+  text-align: left;
+}
+
+/* Sections */
+.RecordingsPage__section {
+  padding: 20rpx;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empty State */
+.RecordingsPage__emptyState {
+  padding: 60rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RecordingsPage__emptyText {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10rpx;
+}
+
+.RecordingsPage__emptyHint {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Transcriptions List */
+.RecordingsPage__transcriptionsList {
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-direction: column;
+}

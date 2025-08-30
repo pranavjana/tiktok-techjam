@@ -1,0 +1,84 @@
+.TabBar {
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20rpx 16rpx 16rpx 16rpx;
+  min-height: 80rpx;
+  position: relative;
+  bottom: 30rpx;
+}
+
+.TabBar__item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx 12rpx;
+  position: relative;
+  transition: transform 0.2s ease;
+  min-height: 44rpx;
+}
+
+.TabBar__item:active {
+  transform: scale(0.95);
+}
+
+.TabBar__item--active {
+  transform: scale(1);
+}
+
+
+.TabBar__label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.TabBar__label--active {
+  color: #ff6448;
+}
+
+.TabBar__indicator {
+  position: absolute;
+  bottom: -6rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32rpx;
+  height: 3rpx;
+  background: linear-gradient(90deg, #ff6448 0%, #ef9bff 100%);
+  border-radius: 2rpx;
+  animation: TabBar__slideIn 0.3s ease;
+}
+
+@keyframes TabBar__slideIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Badge */
+.TabBar__badge {
+  position: absolute;
+  top: 4rpx;
+  right: 8rpx;
+  background: #ff3333;
+  border-radius: 10rpx;
+  min-width: 20rpx;
+  height: 20rpx;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6rpx;
+  border: 2px solid #000;
+  display: flex;
+}
+
+.TabBar__badgeText {
+  font-size: 10px;
+  color: #fff;
+  font-weight: 700;
+}

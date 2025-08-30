@@ -1,0 +1,221 @@
+.RecordButton {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20rpx;
+}
+
+.RecordButton__inner {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+  background: linear-gradient(135deg, #ff6448 0%, #ef9bff 100%);
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 24px rgba(255, 100, 72, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.RecordButton--pressed .RecordButton__inner {
+  transform: scale(0.95);
+}
+
+.RecordButton--recording .RecordButton__inner {
+  background: linear-gradient(135deg, #ff3333 0%, #ff6666 100%);
+  animation: RecordButton__glow 1.5s ease-in-out infinite;
+}
+
+.RecordButton--processing .RecordButton__inner {
+  background: linear-gradient(135deg, #666 0%, #999 100%);
+}
+
+.RecordButton--preparing .RecordButton__inner {
+  background: linear-gradient(135deg, #ffa500 0%, #ffcc00 100%);
+}
+
+/* Wave Icon */
+.RecordButton__micIcon {
+  width: 60rpx;
+  height: 40rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.RecordButton__micIcon::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 6rpx;
+  height: 20rpx;
+  background-color: #fff;
+  border-radius: 3rpx;
+  animation: RecordButton__wave1 1.2s infinite ease-in-out;
+}
+
+.RecordButton__micIcon::after {
+  content: '';
+  position: absolute;
+  left: 12rpx;
+  width: 6rpx;
+  height: 40rpx;
+  background-color: #fff;
+  border-radius: 3rpx;
+  animation: RecordButton__wave2 1.2s infinite ease-in-out;
+}
+
+.RecordButton__micIcon {
+  background: linear-gradient(90deg, 
+    transparent 0%, transparent 20%,
+    #fff 24%, #fff 30%,
+    transparent 34%, transparent 40%,
+    #fff 44%, #fff 50%,
+    transparent 54%, transparent 60%,
+    #fff 64%, #fff 70%,
+    transparent 74%, transparent 80%,
+    #fff 84%, #fff 90%,
+    transparent 94%, transparent 100%);
+  background-size: 60rpx 6rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Stop Icon */
+.RecordButton__stopIcon {
+  width: 48rpx;
+  height: 48rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+/* Pulse Rings */
+.RecordButton__pulseRing {
+  position: absolute;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+  border: 2px solid rgba(255, 100, 72, 0.4);
+  animation: RecordButton__pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.RecordButton__pulseRing--1 {
+  animation-delay: 0s;
+}
+
+.RecordButton__pulseRing--2 {
+  animation-delay: 0.5s;
+}
+
+.RecordButton__pulseRing--3 {
+  animation-delay: 1s;
+}
+
+/* Spinner */
+.RecordButton__spinner {
+  width: 48rpx;
+  height: 48rpx;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: RecordButton__spin 1s linear infinite;
+}
+
+.RecordButton__processingText {
+  position: absolute;
+  bottom: -30rpx;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Preparing Dots */
+.RecordButton__preparingDot {
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 4rpx;
+  animation: RecordButton__bounce 1.4s ease-in-out infinite;
+}
+
+.RecordButton__preparingDot--1 {
+  animation-delay: -0.32s;
+}
+
+.RecordButton__preparingDot--2 {
+  animation-delay: -0.16s;
+}
+
+.RecordButton__preparingDot--3 {
+  animation-delay: 0s;
+}
+
+/* Label */
+.RecordButton__label {
+  position: absolute;
+  bottom: -70rpx;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+
+/* Animations */
+@keyframes RecordButton__pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes RecordButton__spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes RecordButton__bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10rpx);
+  }
+}
+
+@keyframes RecordButton__glow {
+  0%, 100% {
+    box-shadow: 0px 8px 24px rgba(255, 100, 72, 0.4);
+  }
+  50% {
+    box-shadow: 0px 8px 32px rgba(255, 100, 72, 0.6);
+  }
+}
+
+@keyframes RecordButton__wave1 {
+  0%, 40%, 100% {
+    transform: scaleY(0.5);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes RecordButton__wave2 {
+  0%, 20%, 60%, 100% {
+    transform: scaleY(0.3);
+  }
+  40% {
+    transform: scaleY(1);
+  }
+}
+

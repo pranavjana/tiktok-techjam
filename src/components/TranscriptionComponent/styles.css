@@ -1,0 +1,134 @@
+.transcription-component {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 16px;
+}
+
+.transcription-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.record-button {
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.record-button:hover {
+  background: #005BB5;
+}
+
+.record-button.recording {
+  background: #FF3B30;
+  animation: pulse 1.5s infinite;
+}
+
+.record-button.recording:hover {
+  background: #CC2E24;
+}
+
+.record-button.disabled {
+  background: #8E8E93 !important;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.clear-button {
+  background: #8E8E93;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-button:hover {
+  background: #6D6D70;
+}
+
+.clear-button.disabled {
+  background: #C7C7CC !important;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.status-indicators {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.status-indicator {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #F2F2F7;
+  border: 2px solid #E5E5EA;
+}
+
+.status-indicator.connected {
+  background: #D4EDDA;
+  border-color: #34C759;
+  color: #155724;
+}
+
+.status-indicator.recording {
+  background: #FFE5E5;
+  border-color: #FF3B30;
+  color: #721C24;
+  animation: pulse 2s infinite;
+}
+
+.error-message {
+  background: #FFEBEE;
+  border: 1px solid #FF5252;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+  color: #C62828;
+}
+
+.transcript-container {
+  background: #F8F9FA;
+  border: 1px solid #E1E5E9;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 120px;
+}
+
+.transcript-label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1D1D1F;
+}
+
+.transcript-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #3A3A3C;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
